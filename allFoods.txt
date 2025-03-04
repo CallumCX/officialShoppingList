@@ -1,0 +1,40 @@
+Apple: 1.2
+Banana: 0.8
+Cherry: 2.5
+Grape: 2.0
+Orange: 1.0
+Pear: 1.5
+Plum: 2.2
+Strawberry: 3.0
+Blueberry: 3.5
+Raspberry: 4.0
+Carrot: 1.0
+Potato: 0.6
+Onion: 1.2
+Tomato: 2.0
+Cucumber: 1.5
+Lettuce: 1.0
+Broccoli: 1.8
+Cauliflower: 2.0
+Pepper: 1.5
+Courgette: 1.2
+Spaghetti:1.0
+Penne:1.2
+Fusilli:1.1
+Macaroni:1.0
+Tagliatelle:1.5
+Lasagne Sheets:2.0
+Rigatoni:1.3
+Orzo:1.4
+Farfalle:1.2
+Conchiglie:1.4
+Chicken Breast:5.5
+Minced Beef:4.0
+Pork Chops:3.5
+Lamb Leg:9.0
+Bacon:3.0
+Chicken Thighs:4.5
+Beef Steak:7.0
+Sausages:3.2
+Turkey:6.5
+Duck Breast:8.5

@@ -1,11 +1,10 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 
 public class UI {
 
@@ -14,7 +13,7 @@ public class UI {
 
     public static void main(String[] args) throws FileNotFoundException {
         List <String> currentList = new ArrayList<>();
-        HashMap<String,Double> foodList = new HashMap<>();
+        LinkedHashMap<String,Double> foodList = new LinkedHashMap<>();
         shopList.createDictionary(foodList);
 
         JFrame mainWindow = new JFrame();
@@ -61,9 +60,11 @@ public class UI {
         mainWindow.add(foodView);
 
         JTextArea listArea = new JTextArea();
-        listArea.setBounds(468,150,200,500);
         listArea.setEditable(false);
         listArea.setFocusable(false);
+        for (String string:currentList) {
+            listArea.append(string + "\n");
+        }
 
         JScrollPane list = new JScrollPane(listArea);
         list.setBounds(468,150,200,500);
@@ -73,8 +74,29 @@ public class UI {
         JTextArea foodArea = new JTextArea();
         foodArea.setEditable(false);
         foodArea.setFocusable(false);
+        foodArea.append("FRUIT: \n");
         for (Map.Entry<String,Double> stringDoubleEntry:foodList.entrySet()) {
-            foodArea.append(stringDoubleEntry.getKey());
+            switch (stringDoubleEntry.getKey()) {
+                case ("Raspberry"):
+                    foodArea.append(stringDoubleEntry.getKey() + "\n");
+                    foodArea.append("VEGETABLES: \n");
+                    foodArea.repaint();
+                    break;
+                case ("Courgette"):
+                    foodArea.append(stringDoubleEntry.getKey() + "\n");
+                    foodArea.append("PASTA: \n");
+                    foodArea.repaint();
+                    break;
+                case ("Conchiglie"):
+                    foodArea.append(stringDoubleEntry.getKey() + "\n");
+                    foodArea.append("MEAT & POULTRY: \n");
+                    foodArea.repaint();
+                    break;
+                default:
+                    foodArea.append(stringDoubleEntry.getKey() + "\n");
+                    foodArea.repaint();
+                    break;
+            }
         }
         foodArea.repaint();
 
@@ -83,7 +105,35 @@ public class UI {
         food.setVisible(true);
         mainWindow.add(food);
 
+        String addItem = itemInput.getText();
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                shopList.addToList(addItem,foodList,currentList);
+                updateList(listArea,currentList);
+                listArea.repaint();
+            }
+        });
+
+        String removeItem = itemInput2.getText();
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                shopList.removeFromlist(removeItem,currentList);
+                updateList(listArea,currentList);
+                listArea.repaint();
+            }
+        });
+
         mainWindow.repaint();
         mainWindow.revalidate();
+    }
+
+    public static void updateList(JTextArea listArea,List<String> currentList) {
+        listArea.setText("");
+
+        for (String string:currentList) {
+            listArea.append(string + "\n");
+        }
     }
 }

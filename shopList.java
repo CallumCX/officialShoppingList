@@ -39,12 +39,12 @@ public class shopList {
         }
     }
 
-    public static void createDictionary(HashMap<String,Double> dict) throws FileNotFoundException {
+    public static void createDictionary(Map<String,Double> dict) throws FileNotFoundException {
         File file = new File("C:\\Users\\callu\\IdeaProjects\\officialShoppingList\\allFoods.txt");
         Scanner reader = new Scanner(file);
 
         while (reader.hasNextLine()) {
-            String[] foodData = (reader.nextLine().replace(" ","").trim().split(":"));
+            String[] foodData = (reader.nextLine().trim().split(":"));
             String foodName = foodData[0];
             Double foodPrice = Double.parseDouble(foodData[1]);
             dict.put(foodName,foodPrice);
