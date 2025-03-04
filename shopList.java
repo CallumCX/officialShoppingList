@@ -1,5 +1,4 @@
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,11 +39,12 @@ public class shopList {
         }
     }
 
-    public static void createDictionary(HashMap<String,Double> dict) {
-        Scanner reader = new Scanner("allFoods.txt");
+    public static void createDictionary(HashMap<String,Double> dict) throws FileNotFoundException {
+        File file = new File("C:\\Users\\callu\\IdeaProjects\\officialShoppingList\\allFoods.txt");
+        Scanner reader = new Scanner(file);
 
         while (reader.hasNextLine()) {
-            String[] foodData = (reader.nextLine().replace(" ","")).split(":");
+            String[] foodData = (reader.nextLine().replace(" ","").trim().split(":"));
             String foodName = foodData[0];
             Double foodPrice = Double.parseDouble(foodData[1]);
             dict.put(foodName,foodPrice);
