@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class shopList {
     List <String> shoppingList;
-    static Map <String,Double> food = new HashMap<>();
 
 
     public shopList(List<String> shoppingList) {
@@ -41,18 +40,17 @@ public class shopList {
         }
     }
 
-    public static Map<String, Double> createDictionary(Map<String,Double> food) {
+    public static void createDictionary(HashMap<String,Double> dict) {
         Scanner reader = new Scanner("allFoods.txt");
 
         while (reader.hasNextLine()) {
-            String[] foodData = (reader.nextLine()).split(":");
+            String[] foodData = (reader.nextLine().replace(" ","")).split(":");
             String foodName = foodData[0];
             Double foodPrice = Double.parseDouble(foodData[1]);
-            food.put(foodName,foodPrice);
+            dict.put(foodName,foodPrice);
         }
 
         reader.close();
-        return food;
     }
 
     public static void saveToFile(List<String> shoppingList,String saveFile) throws IOException {

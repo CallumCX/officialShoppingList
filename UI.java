@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,8 @@ public class UI {
 
     public static void main(String[] args) {
         List <String> currentList = new ArrayList<>();
+        HashMap<String,Double> foodList = new HashMap<>();
+        shopList.createDictionary(foodList);
 
         JFrame mainWindow = new JFrame();
         mainWindow.setSize(1000, 1000);
@@ -69,9 +72,10 @@ public class UI {
         JTextArea foodArea = new JTextArea();
         foodArea.setEditable(false);
         foodArea.setFocusable(false);
-        for (Map.Entry<String,Double> stringDoubleEntry:shopList.food.entrySet()) {
+        for (Map.Entry<String,Double> stringDoubleEntry:foodList.entrySet()) {
             foodArea.append(stringDoubleEntry.getKey());
         }
+        foodArea.repaint();
 
         JScrollPane food = new JScrollPane(foodArea);
         food.setBounds(718,150,200,500);
