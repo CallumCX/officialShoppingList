@@ -1,8 +1,5 @@
 import java.io.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class shopList {
     List <String> shoppingList;
@@ -24,7 +21,7 @@ public class shopList {
         }
     }
 
-    public static double calculatePrice(Map<String,Double> food,List<String> shoppingList) {
+    public static double calculatePrice(List<String> shoppingList,Map<String,Double> food) {
         double price = 0.0;
 
         for (String string:shoppingList) {

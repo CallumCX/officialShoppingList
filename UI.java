@@ -51,6 +51,14 @@ public class UI {
         listView.setVisible(true);
         mainWindow.add(listView);
 
+        JTextField priceView = new JTextField("current price");
+        priceView.setBounds(625,680,135,25);
+        priceView.setHorizontalAlignment(JTextField.CENTER);
+        priceView.setEditable(false);
+        priceView.setFocusable(false);
+        priceView.setVisible(true);
+        mainWindow.add(priceView);
+
         JTextField foodView = new JTextField("all available foods");
         foodView.setBounds(750,100,135,25);
         foodView.setHorizontalAlignment(JTextField.CENTER);
@@ -70,6 +78,17 @@ public class UI {
         list.setBounds(468,150,200,500);
         list.setVisible(true);
         mainWindow.add(list);
+
+        JTextArea priceArea = new JTextArea();
+        priceArea.setEditable(false);
+        priceArea.setFocusable(false);
+        priceArea.setBounds(593,730,200,200);
+        priceArea.setVisible(true);
+        mainWindow.add(priceArea);
+        priceArea.append(String.format("Current price is: £%.2f \n" , shopList.calculatePrice(currentList,foodList)));
+        priceArea.append(String.format("Morrisons discount: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.1));
+        priceArea.append(String.format("Discounted price: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.9));
+        priceArea.repaint();
 
         JTextArea foodArea = new JTextArea();
         foodArea.setEditable(false);
@@ -98,29 +117,30 @@ public class UI {
                     break;
             }
         }
-        foodArea.repaint();
 
         JScrollPane food = new JScrollPane(foodArea);
         food.setBounds(718,150,200,500);
         food.setVisible(true);
         mainWindow.add(food);
 
-        String addItem = itemInput.getText();
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String addItem = itemInput.getText();
                 shopList.addToList(addItem,foodList,currentList);
                 updateList(listArea,currentList);
+                updatePrice(priceArea,currentList,foodList);
                 listArea.repaint();
             }
         });
 
-        String removeItem = itemInput2.getText();
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String removeItem = itemInput2.getText();
                 shopList.removeFromlist(removeItem,currentList);
                 updateList(listArea,currentList);
+                updatePrice(priceArea,currentList,foodList);
                 listArea.repaint();
             }
         });
@@ -135,5 +155,14 @@ public class UI {
         for (String string:currentList) {
             listArea.append(string + "\n");
         }
+    }
+
+    public static void updatePrice(JTextArea priceArea,List<String> currentList,Map<String,Double> foodList) {
+        priceArea.setText("");
+
+        priceArea.append(String.format("Current price is: £%.2f \n" , shopList.calculatePrice(currentList,foodList)));
+        priceArea.append(String.format("Morrisons discount: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.1));
+        priceArea.append(String.format("Discounted price: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.9));
+        priceArea.repaint();
     }
 }
