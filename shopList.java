@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class shopList {
     List <String> shoppingList;
-    Map <String,Double> food = new HashMap<>();
+    static Map <String,Double> food = new HashMap<>();
 
 
     public shopList(List<String> shoppingList) {
@@ -41,8 +41,8 @@ public class shopList {
         }
     }
 
-    public static Map<String, Double> createDictionary(String saveFile, Map<String,Double> food) {
-        Scanner reader = new Scanner(saveFile);
+    public static Map<String, Double> createDictionary(Map<String,Double> food) {
+        Scanner reader = new Scanner("allFoods.txt");
 
         while (reader.hasNextLine()) {
             String[] foodData = (reader.nextLine()).split(":");
