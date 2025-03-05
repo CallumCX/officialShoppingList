@@ -31,12 +31,6 @@ public class shopList {
         return price;
     }
 
-    public static void listAllItems(Map<String,Double> food) {
-        for (Map.Entry<String,Double> Map:food.entrySet()) {
-            System.out.println("Item:  " + Map.getKey() + "Price:  " + Map.getValue());
-        }
-    }
-
     public static void createDictionary(Map<String,Double> dict) throws FileNotFoundException {
         File file = new File("C:\\Users\\callu\\IdeaProjects\\officialShoppingList\\allFoods.txt");
         Scanner reader = new Scanner(file);
@@ -61,8 +55,9 @@ public class shopList {
         writer.close();
     }
 
-    public static void loadFile(List<String> shoppingList,String saveFile) {
-        Scanner reader = new Scanner(saveFile);
+    public static void loadFile(List<String> shoppingList,String saveFile) throws FileNotFoundException {
+        File file = new File(saveFile);
+        Scanner reader = new Scanner(file);
 
         while (reader.hasNextLine()) {
             shoppingList.add(reader.nextLine());

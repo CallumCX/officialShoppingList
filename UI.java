@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -81,6 +80,39 @@ public class UI {
         button6.setEnabled(false);
         button6.setVisible(true);
         mainWindow.add(button6);
+
+        JButton button7 = new JButton("load shopping list");
+        button7.setBounds(275,250,150,25);
+        button7.setVisible(true);
+        mainWindow.add(button7);
+
+        JCheckBox loadBox1 = new JCheckBox("save 1");
+        JCheckBox loadBox2 = new JCheckBox("save 2");
+        JCheckBox loadBox3 = new JCheckBox("save 3");
+        loadBox1.setBounds(275,280,150,25);
+        loadBox2.setBounds(275,300,150,25);
+        loadBox3.setBounds(275,320,150,25);
+        loadBox1.setEnabled(false);
+        loadBox2.setEnabled(false);
+        loadBox3.setEnabled(false);
+        loadBox1.setVisible(true);
+        loadBox2.setVisible(true);
+        loadBox3.setVisible(true);
+        mainWindow.add(loadBox1);
+        mainWindow.add(loadBox2);
+        mainWindow.add(loadBox3);
+
+        JButton button8 = new JButton("load");
+        button8.setBounds(283,350,135,25);
+        button8.setEnabled(false);
+        button8.setVisible(true);
+        mainWindow.add(button8);
+
+        JButton button9 = new JButton("cancel");
+        button9.setBounds(283,380,135,25);
+        button9.setEnabled(false);
+        button9.setVisible(true);
+        mainWindow.add(button9);
 
         JTextField listView = new JTextField("current shopping list");
         listView.setBounds(500,100,135,25);
@@ -239,13 +271,13 @@ public class UI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String text = null;
-                if (saveBox1.isEnabled()) {
+                if (saveBox1.isEnabled() && saveBox1.isSelected()) {
                     text = "save1";
                 }
-                else if (saveBox2.isEnabled()) {
+                else if (saveBox2.isEnabled() && saveBox2.isSelected()) {
                     text = "save2";
                 }
-                else if (saveBox3.isEnabled()) {
+                else if (saveBox3.isEnabled() && saveBox3.isSelected()) {
                     text = "save3";
                 }
 
@@ -254,6 +286,102 @@ public class UI {
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
+            }
+        });
+
+        button7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadBox1.setEnabled(true);
+                loadBox2.setEnabled(true);
+                loadBox3.setEnabled(true);
+                button8.setEnabled(true);
+                button9.setEnabled(true);
+
+                mainWindow.repaint();
+                mainWindow.revalidate();
+            }
+        });
+
+        loadBox1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadBox2.setSelected(false);
+                loadBox3.setSelected(false);
+            }
+        });
+
+        loadBox2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadBox1.setSelected(false);
+                loadBox3.setSelected(false);
+            }
+        });
+
+        loadBox3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadBox1.setSelected(false);
+                loadBox2.setSelected(false);
+            }
+        });
+
+        button8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String text = null;
+                if (loadBox1.isEnabled() && loadBox1.isSelected()) {
+                    text = "save1";
+                }
+                else if (loadBox2.isEnabled() && loadBox2.isSelected()) {
+                    text = "save2";
+                }
+                else if (loadBox3.isEnabled() && loadBox3.isSelected()) {
+                    text = "save3";
+                }
+                currentList.clear();
+                try {
+                    shopList.loadFile(currentList,text);
+                } catch (FileNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+                listArea.setText("");
+                for (String string:currentList) {
+                    listArea.append(string + "\n");
+                }
+                mainWindow.repaint();
+                mainWindow.revalidate();
+                updatePrice(priceArea,currentList,foodList);
+            }
+        });
+
+        button6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveBox1.setEnabled(false);
+                saveBox1.setSelected(false);
+                saveBox2.setEnabled(false);
+                saveBox2.setSelected(false);
+                saveBox3.setSelected(false);
+                saveBox3.setEnabled(false);
+                button5.setEnabled(false);
+                button6.setEnabled(false);
+            }
+        });
+
+        button9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadBox1.setEnabled(false);
+                loadBox1.setSelected(false);
+                loadBox2.setEnabled(false);
+                loadBox2.setSelected(false);
+                loadBox3.setSelected(false);
+                loadBox3.setEnabled(false);
+                button8.setEnabled(false);
+                button9.setEnabled(false);
             }
         });
 
@@ -276,20 +404,5 @@ public class UI {
         priceArea.append(String.format("Morrisons discount: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.1));
         priceArea.append(String.format("Discounted price: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.9));
         priceArea.repaint();
-    }
-
-    public static void checkBoxChecker(JCheckBox saveBox1,JCheckBox saveBox2,JCheckBox saveBox3) {
-        if (saveBox1.isEnabled()) {
-            saveBox2.setEnabled(false);
-            saveBox3.setEnabled(false);
-        }
-        else if (saveBox2.isEnabled()) {
-            saveBox1.setEnabled(false);
-            saveBox3.setEnabled(false);
-        }
-        else {
-            saveBox1.setEnabled(false);
-            saveBox3.setEnabled(false);
-        }
     }
 }
