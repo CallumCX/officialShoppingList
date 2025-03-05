@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
@@ -52,6 +53,34 @@ public class UI {
         button4.setBounds(92,250,150,25);
         button4.setVisible(true);
         mainWindow.add(button4);
+
+        JCheckBox saveBox1 = new JCheckBox("save 1");
+        JCheckBox saveBox2 = new JCheckBox("save 2");
+        JCheckBox saveBox3 = new JCheckBox("save 3");
+        saveBox1.setBounds(92,280,150,25);
+        saveBox2.setBounds(92,300,150,25);
+        saveBox3.setBounds(92,320,150,25);
+        saveBox1.setEnabled(false);
+        saveBox2.setEnabled(false);
+        saveBox3.setEnabled(false);
+        saveBox1.setVisible(true);
+        saveBox2.setVisible(true);
+        saveBox3.setVisible(true);
+        mainWindow.add(saveBox1);
+        mainWindow.add(saveBox2);
+        mainWindow.add(saveBox3);
+
+        JButton button5 = new JButton("save");
+        button5.setBounds(100,350,135,25);
+        button5.setEnabled(false);
+        button5.setVisible(true);
+        mainWindow.add(button5);
+
+        JButton button6 = new JButton("cancel");
+        button6.setBounds(100,380,135,25);
+        button6.setEnabled(false);
+        button6.setVisible(true);
+        mainWindow.add(button6);
 
         JTextField listView = new JTextField("current shopping list");
         listView.setBounds(500,100,135,25);
@@ -168,6 +197,66 @@ public class UI {
             }
         });
 
+        button4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveBox1.setEnabled(true);
+                saveBox2.setEnabled(true);
+                saveBox3.setEnabled(true);
+                button5.setEnabled(true);
+                button6.setEnabled(true);
+
+                mainWindow.repaint();
+                mainWindow.revalidate();
+            }
+        });
+
+        saveBox1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveBox2.setSelected(false);
+                saveBox3.setSelected(false);
+            }
+        });
+
+        saveBox2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveBox1.setSelected(false);
+                saveBox3.setSelected(false);
+            }
+        });
+
+        saveBox3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveBox2.setSelected(false);
+                saveBox1.setSelected(false);
+            }
+        });
+
+        button5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String text = null;
+                if (saveBox1.isEnabled()) {
+                    text = "save1";
+                }
+                else if (saveBox2.isEnabled()) {
+                    text = "save2";
+                }
+                else if (saveBox3.isEnabled()) {
+                    text = "save3";
+                }
+
+                try {
+                    shopList.saveToFile(currentList,text);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
         mainWindow.repaint();
         mainWindow.revalidate();
     }
@@ -187,5 +276,20 @@ public class UI {
         priceArea.append(String.format("Morrisons discount: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.1));
         priceArea.append(String.format("Discounted price: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.9));
         priceArea.repaint();
+    }
+
+    public static void checkBoxChecker(JCheckBox saveBox1,JCheckBox saveBox2,JCheckBox saveBox3) {
+        if (saveBox1.isEnabled()) {
+            saveBox2.setEnabled(false);
+            saveBox3.setEnabled(false);
+        }
+        else if (saveBox2.isEnabled()) {
+            saveBox1.setEnabled(false);
+            saveBox3.setEnabled(false);
+        }
+        else {
+            saveBox1.setEnabled(false);
+            saveBox3.setEnabled(false);
+        }
     }
 }

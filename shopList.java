@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
@@ -50,15 +51,14 @@ public class shopList {
         reader.close();
     }
 
-    public static void saveToFile(List<String> shoppingList,String saveFile) throws IOException {
-        FileWriter writer = new FileWriter(String.format("%.txt",saveFile));
+    public static void saveToFile(List<String> shoppingList, String saveFile) throws IOException {
+        FileWriter writer = new FileWriter(saveFile);
 
         for (String string:shoppingList) {
-            writer.write(string);
+            writer.write(string + "\n");
         }
 
         writer.close();
-        shoppingList.clear();
     }
 
     public static void loadFile(List<String> shoppingList,String saveFile) {
