@@ -43,6 +43,16 @@ public class UI {
         itemInput2.setVisible(true);
         mainWindow.add(itemInput2);
 
+        JButton button3 = new JButton("clear shopping list");
+        button3.setBounds(92,170,150,25);
+        button3.setVisible(true);
+        mainWindow.add(button3);
+
+        JButton button4 = new JButton("save shopping list");
+        button4.setBounds(92,250,150,25);
+        button4.setVisible(true);
+        mainWindow.add(button4);
+
         JTextField listView = new JTextField("current shopping list");
         listView.setBounds(500,100,135,25);
         listView.setHorizontalAlignment(JTextField.CENTER);
@@ -88,6 +98,7 @@ public class UI {
         priceArea.append(String.format("Current price is: £%.2f \n" , shopList.calculatePrice(currentList,foodList)));
         priceArea.append(String.format("Morrisons discount: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.1));
         priceArea.append(String.format("Discounted price: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.9));
+
         priceArea.repaint();
 
         JTextArea foodArea = new JTextArea();
@@ -98,16 +109,19 @@ public class UI {
             switch (stringDoubleEntry.getKey()) {
                 case ("Raspberry"):
                     foodArea.append(stringDoubleEntry.getKey() + "\n");
+                    foodArea.append("\n");
                     foodArea.append("VEGETABLES: \n");
                     foodArea.repaint();
                     break;
                 case ("Courgette"):
                     foodArea.append(stringDoubleEntry.getKey() + "\n");
+                    foodArea.append("\n");
                     foodArea.append("PASTA: \n");
                     foodArea.repaint();
                     break;
                 case ("Conchiglie"):
                     foodArea.append(stringDoubleEntry.getKey() + "\n");
+                    foodArea.append("\n");
                     foodArea.append("MEAT & POULTRY: \n");
                     foodArea.repaint();
                     break;
@@ -142,6 +156,15 @@ public class UI {
                 updateList(listArea,currentList);
                 updatePrice(priceArea,currentList,foodList);
                 listArea.repaint();
+            }
+        });
+
+        button3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                listArea.setText("");
+                currentList.clear();
+                updatePrice(priceArea,currentList,foodList);
             }
         });
 
