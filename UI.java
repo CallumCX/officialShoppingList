@@ -114,6 +114,14 @@ public class UI {
         button9.setVisible(true);
         mainWindow.add(button9);
 
+        JTextField stats = new JTextField("shopping statistics");
+        stats.setBounds(190,440,135,25);
+        stats.setHorizontalAlignment(JTextField.CENTER);
+        stats.setEditable(false);
+        stats.setFocusable(false);
+        stats.setVisible(true);
+        mainWindow.add(stats);
+
         JTextField listView = new JTextField("current shopping list");
         listView.setBounds(500,100,135,25);
         listView.setHorizontalAlignment(JTextField.CENTER);
@@ -137,6 +145,72 @@ public class UI {
         foodView.setFocusable(false);
         foodView.setVisible(true);
         mainWindow.add(foodView);
+
+        JTextArea statsView = new JTextArea();
+        statsView.setBounds(134,490,250,300);
+        statsView.setEditable(false);
+        statsView.setFocusable(false);
+        statsView.setVisible(true);
+        mainWindow.add(statsView);
+
+        List<String> statsList = new ArrayList<>();
+        double carbohydrates = 0;
+        double fruitVeg = 0;
+        double dairy = 0;
+        double protein = 0;
+        double carbPrice = 0;
+        double fruitVegPrice = 0;
+        double dairyPrice = 0;
+        double proteinPrice = 0;
+
+        for (Map.Entry<String,Double> stringDoubleEntry:foodList.entrySet()) {
+            statsList.add(stringDoubleEntry.getKey());
+        }
+
+        for (String string:currentList) {
+            if (statsList.indexOf(string) <= statsList.indexOf("Raspberry")){
+                fruitVeg += 1;
+                fruitVegPrice += foodList.get(string);
+            } else if (statsList.indexOf(string) <= statsList.indexOf("Courgette") && statsList.indexOf(string) > statsList.indexOf("Raspberry")) {
+                fruitVeg += 1;
+                fruitVegPrice += foodList.get(string);
+            }
+            else if (statsList.indexOf(string) <= statsList.indexOf("Conchiglie") && statsList.indexOf(string) > statsList.indexOf("Courgette")){
+                carbohydrates += 1;
+                carbPrice += foodList.get(string);
+            }
+            else if (statsList.indexOf(string) <= statsList.indexOf("Duck Breast") && statsList.indexOf(string) > statsList.indexOf("Conchiglie")) {
+                protein += 1;
+                proteinPrice += foodList.get(string);
+            }
+        }
+        if (!currentList.isEmpty()) {
+            statsView.append(String.format("Fruit & veg percentage: %.2f",(fruitVeg / currentList.size()) * 100) + "%\n");
+            statsView.append(String.format("Carbohydrates percentage: %.2f",(carbohydrates / currentList.size()) * 100) + "%\n");
+            statsView.append(String.format("Protein percentage: %.2f",(protein / currentList.size()) * 100) + "%\n");
+            statsView.append(String.format("Dairy percentage: %.2f",(dairy / currentList.size()) * 100) + "%\n");
+            statsView.append("\n");
+            statsView.append(String.format("Total amount spent on fruit & veg: £%.2f \n",fruitVegPrice));
+            statsView.append(String.format("Total amount spent on carbohydrates: £%.2f \n",carbPrice));
+            statsView.append(String.format("Total amount spent on protein: £%.2f \n",proteinPrice));
+            statsView.append(String.format("Total amount spent on dairy: £%.2f \n",dairyPrice));
+            statsView.repaint();
+            statsView.revalidate();
+        }
+        else {
+            statsView.append("Fruit & veg percentage: 0.0%\n");
+            statsView.append("Carbohydrates percentage: 0.0%\n");
+            statsView.append("Protein percentage: 0.0%\n");
+            statsView.append("Dairy percentage: 0.0%\n");
+            statsView.append("\n");
+            statsView.append("Total amount spent on fruit & veg: £0.00 \n");
+            statsView.append("Total amount spent on carbohydrates: £0.00 \n");
+            statsView.append("Total amount spent on protein: £0.00 \n");
+            statsView.append("Total amount spent on dairy: £0.00 \n");
+            statsView.repaint();
+            statsView.revalidate();
+        }
+
 
         JTextArea listArea = new JTextArea();
         listArea.setEditable(false);
@@ -205,6 +279,7 @@ public class UI {
                 shopList.addToList(addItem,foodList,currentList);
                 updateList(listArea,currentList);
                 updatePrice(priceArea,currentList,foodList);
+                updateStats(statsView,currentList,foodList);
                 listArea.repaint();
             }
         });
@@ -216,6 +291,7 @@ public class UI {
                 shopList.removeFromlist(removeItem,currentList);
                 updateList(listArea,currentList);
                 updatePrice(priceArea,currentList,foodList);
+                updateStats(statsView,currentList,foodList);
                 listArea.repaint();
             }
         });
@@ -226,6 +302,7 @@ public class UI {
                 listArea.setText("");
                 currentList.clear();
                 updatePrice(priceArea,currentList,foodList);
+                updateStats(statsView,currentList,foodList);
             }
         });
 
@@ -354,6 +431,7 @@ public class UI {
                 mainWindow.repaint();
                 mainWindow.revalidate();
                 updatePrice(priceArea,currentList,foodList);
+                updateStats(statsView,currentList,foodList);
             }
         });
 
@@ -404,5 +482,69 @@ public class UI {
         priceArea.append(String.format("Morrisons discount: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.1));
         priceArea.append(String.format("Discounted price: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.9));
         priceArea.repaint();
+    }
+
+    public static void updateStats(JTextArea statsView,List<String> currentList,Map<String,Double> foodList) {
+        statsView.setText("");
+
+        List<String> statsList = new ArrayList<>();
+        double carbohydrates = 0;
+        double fruitVeg = 0;
+        double dairy = 0;
+        double protein = 0;
+        double carbPrice = 0;
+        double fruitVegPrice = 0;
+        double dairyPrice = 0;
+        double proteinPrice = 0;
+
+        for (Map.Entry<String,Double> stringDoubleEntry:foodList.entrySet()) {
+            statsList.add(stringDoubleEntry.getKey());
+        }
+
+        for (String string:currentList) {
+            if (statsList.indexOf(string) <= statsList.indexOf("Raspberry")){
+                fruitVeg += 1;
+                fruitVegPrice += foodList.get(string);
+            } else if (statsList.indexOf(string) <= statsList.indexOf("Courgette") && statsList.indexOf(string) > statsList.indexOf("Raspberry")) {
+                fruitVeg += 1;
+                fruitVegPrice += foodList.get(string);
+            }
+            else if (statsList.indexOf(string) <= statsList.indexOf("Conchiglie") && statsList.indexOf(string) > statsList.indexOf("Courgette")){
+                carbohydrates += 1;
+                carbPrice += foodList.get(string);
+            }
+            else if (statsList.indexOf(string) <= statsList.indexOf("Duck Breast") && statsList.indexOf(string) > statsList.indexOf("Conchiglie")) {
+                protein += 1;
+                proteinPrice += foodList.get(string);
+            }
+        }
+
+        if (!currentList.isEmpty()) {
+            statsView.append(String.format("Fruit & veg percentage: %.2f",(fruitVeg / currentList.size()) * 100) + "%\n");
+            statsView.append(String.format("Carbohydrates percentage: %.2f",(carbohydrates / currentList.size()) * 100) + "%\n");
+            statsView.append(String.format("Protein percentage: %.2f",(protein / currentList.size()) * 100) + "%\n");
+            statsView.append(String.format("Dairy percentage: %.2f",(dairy / currentList.size()) * 100) + "%\n");
+            statsView.append("\n");
+            statsView.append(String.format("Total amount spent on fruit & veg: £%.2f \n",fruitVegPrice));
+            statsView.append(String.format("Total amount spent on carbohydrates: £%.2f \n",carbPrice));
+            statsView.append(String.format("Total amount spent on protein: £%.2f \n",proteinPrice));
+            statsView.append(String.format("Total amount spent on dairy: £%.2f \n",dairyPrice));
+            statsView.repaint();
+            statsView.revalidate();
+        }
+        else {
+            statsView.append("Fruit & veg percentage: 0.0%\n");
+            statsView.append("Carbohydrates percentage: 0.0%\n");
+            statsView.append("Protein percentage: 0.0%\n");
+            statsView.append("Dairy percentage: 0.0%\n");
+            statsView.append("\n");
+            statsView.append("Total amount spent on fruit & veg: £0.00 \n");
+            statsView.append("Total amount spent on carbohydrates: £0.00 \n");
+            statsView.append("Total amount spent on protein: £0.00 \n");
+            statsView.append("Total amount spent on dairy: £0.00 \n");
+            statsView.repaint();
+            statsView.revalidate();
+        }
+
     }
 }
