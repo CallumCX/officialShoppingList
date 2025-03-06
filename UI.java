@@ -16,6 +16,9 @@ public class UI {
         LinkedHashMap<String,Double> foodList = new LinkedHashMap<>();
         shopList.createDictionary(foodList);
 
+
+
+
         JFrame mainWindow = new JFrame();
         mainWindow.setSize(1000, 1000);
         mainWindow.setResizable(false);
@@ -23,35 +26,56 @@ public class UI {
         mainWindow.setLayout(null);
         mainWindow.setVisible(true);
 
+
+
+
         JButton button1 = new JButton("add to list");
         button1.setBounds(100,100,135,25);
         button1.setVisible(true);
         mainWindow.add(button1);
+
+
+
 
         JTextField itemInput = new JTextField();
         itemInput.setBounds(250,100,135,25);
         itemInput.setVisible(true);
         mainWindow.add(itemInput);
 
+
+
+
         JButton button2 = new JButton("remove an item");
         button2.setBounds(100,135,135,25);
         button2.setVisible(true);
         mainWindow.add(button2);
+
+
+
 
         JTextField itemInput2 = new JTextField();
         itemInput2.setBounds(250,135,135,25);
         itemInput2.setVisible(true);
         mainWindow.add(itemInput2);
 
+
+
+
         JButton button3 = new JButton("clear shopping list");
         button3.setBounds(92,170,150,25);
         button3.setVisible(true);
         mainWindow.add(button3);
 
+
+
+
         JButton button4 = new JButton("save shopping list");
         button4.setBounds(92,250,150,25);
         button4.setVisible(true);
         mainWindow.add(button4);
+
+
+
 
         JCheckBox saveBox1 = new JCheckBox("save 1");
         JCheckBox saveBox2 = new JCheckBox("save 2");
@@ -69,11 +93,17 @@ public class UI {
         mainWindow.add(saveBox2);
         mainWindow.add(saveBox3);
 
+
+
+
         JButton button5 = new JButton("save");
         button5.setBounds(100,350,135,25);
         button5.setEnabled(false);
         button5.setVisible(true);
         mainWindow.add(button5);
+
+
+
 
         JButton button6 = new JButton("cancel");
         button6.setBounds(100,380,135,25);
@@ -81,10 +111,16 @@ public class UI {
         button6.setVisible(true);
         mainWindow.add(button6);
 
+
+
+
         JButton button7 = new JButton("load shopping list");
         button7.setBounds(275,250,150,25);
         button7.setVisible(true);
         mainWindow.add(button7);
+
+
+
 
         JCheckBox loadBox1 = new JCheckBox("save 1");
         JCheckBox loadBox2 = new JCheckBox("save 2");
@@ -102,17 +138,26 @@ public class UI {
         mainWindow.add(loadBox2);
         mainWindow.add(loadBox3);
 
+
+
+
         JButton button8 = new JButton("load");
         button8.setBounds(283,350,135,25);
         button8.setEnabled(false);
         button8.setVisible(true);
         mainWindow.add(button8);
 
+
+
+
         JButton button9 = new JButton("cancel");
         button9.setBounds(283,380,135,25);
         button9.setEnabled(false);
         button9.setVisible(true);
         mainWindow.add(button9);
+
+
+
 
         JTextField stats = new JTextField("shopping statistics");
         stats.setBounds(190,440,135,25);
@@ -122,6 +167,9 @@ public class UI {
         stats.setVisible(true);
         mainWindow.add(stats);
 
+
+
+
         JTextField listView = new JTextField("current shopping list");
         listView.setBounds(500,100,135,25);
         listView.setHorizontalAlignment(JTextField.CENTER);
@@ -129,6 +177,9 @@ public class UI {
         listView.setFocusable(false);
         listView.setVisible(true);
         mainWindow.add(listView);
+
+
+
 
         JTextField priceView = new JTextField("current price");
         priceView.setBounds(625,680,135,25);
@@ -138,6 +189,9 @@ public class UI {
         priceView.setVisible(true);
         mainWindow.add(priceView);
 
+
+
+
         JTextField foodView = new JTextField("all available foods");
         foodView.setBounds(750,100,135,25);
         foodView.setHorizontalAlignment(JTextField.CENTER);
@@ -145,6 +199,9 @@ public class UI {
         foodView.setFocusable(false);
         foodView.setVisible(true);
         mainWindow.add(foodView);
+
+
+
 
         JTextArea statsView = new JTextArea();
         statsView.setBounds(134,490,250,300);
@@ -212,6 +269,9 @@ public class UI {
         }
 
 
+
+
+
         JTextArea listArea = new JTextArea();
         listArea.setEditable(false);
         listArea.setFocusable(false);
@@ -219,10 +279,16 @@ public class UI {
             listArea.append(string + "\n");
         }
 
+
+
+
         JScrollPane list = new JScrollPane(listArea);
         list.setBounds(468,150,200,500);
         list.setVisible(true);
         mainWindow.add(list);
+
+
+
 
         JTextArea priceArea = new JTextArea();
         priceArea.setEditable(false);
@@ -235,6 +301,9 @@ public class UI {
         priceArea.append(String.format("Discounted price: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.9));
 
         priceArea.repaint();
+
+
+
 
         JTextArea foodArea = new JTextArea();
         foodArea.setEditable(false);
@@ -267,10 +336,16 @@ public class UI {
             }
         }
 
+
+
+
         JScrollPane food = new JScrollPane(foodArea);
         food.setBounds(718,150,200,500);
         food.setVisible(true);
         mainWindow.add(food);
+
+
+
 
         button1.addActionListener(new ActionListener() {
             @Override
@@ -284,6 +359,9 @@ public class UI {
             }
         });
 
+
+
+
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -296,6 +374,9 @@ public class UI {
             }
         });
 
+
+
+
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -305,6 +386,9 @@ public class UI {
                 updateStats(statsView,currentList,foodList);
             }
         });
+
+
+
 
         button4.addActionListener(new ActionListener() {
             @Override
@@ -320,6 +404,9 @@ public class UI {
             }
         });
 
+
+
+
         saveBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -327,6 +414,9 @@ public class UI {
                 saveBox3.setSelected(false);
             }
         });
+
+
+
 
         saveBox2.addActionListener(new ActionListener() {
             @Override
@@ -336,6 +426,9 @@ public class UI {
             }
         });
 
+
+
+
         saveBox3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -343,6 +436,9 @@ public class UI {
                 saveBox1.setSelected(false);
             }
         });
+
+
+
 
         button5.addActionListener(new ActionListener() {
             @Override
@@ -366,6 +462,9 @@ public class UI {
             }
         });
 
+
+
+
         button7.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -380,6 +479,9 @@ public class UI {
             }
         });
 
+
+
+
         loadBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -387,6 +489,9 @@ public class UI {
                 loadBox3.setSelected(false);
             }
         });
+
+
+
 
         loadBox2.addActionListener(new ActionListener() {
             @Override
@@ -396,6 +501,9 @@ public class UI {
             }
         });
 
+
+
+
         loadBox3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -403,6 +511,9 @@ public class UI {
                 loadBox2.setSelected(false);
             }
         });
+
+
+
 
         button8.addActionListener(new ActionListener() {
             @Override
@@ -435,6 +546,9 @@ public class UI {
             }
         });
 
+
+
+
         button6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -448,6 +562,9 @@ public class UI {
                 button6.setEnabled(false);
             }
         });
+
+
+
 
         button9.addActionListener(new ActionListener() {
             @Override
@@ -467,6 +584,9 @@ public class UI {
         mainWindow.revalidate();
     }
 
+
+
+
     public static void updateList(JTextArea listArea,List<String> currentList) {
         listArea.setText("");
 
@@ -474,6 +594,9 @@ public class UI {
             listArea.append(string + "\n");
         }
     }
+
+
+
 
     public static void updatePrice(JTextArea priceArea,List<String> currentList,Map<String,Double> foodList) {
         priceArea.setText("");
@@ -483,6 +606,9 @@ public class UI {
         priceArea.append(String.format("Discounted price: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.9));
         priceArea.repaint();
     }
+
+
+
 
     public static void updateStats(JTextArea statsView,List<String> currentList,Map<String,Double> foodList) {
         statsView.setText("");
