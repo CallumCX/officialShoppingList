@@ -165,13 +165,49 @@ Manicotti: 1.5
 Ditalini: 1.2
 Gemelli: 1.3
 Conchiglie: 1.4
+Sirloin Steak: 8.0
+T-bone Steak: 10.0
+Ribeye Steak: 9.5
+Fillet Steak: 12.0
+Beef Brisket: 6.0
+Beef Rump: 6.5
+Beef Mince: 4.0
+Chuck Steak: 6.0
+Stewing Beef: 4.5
+Flank Steak: 7.0
+Skirt Steak: 6.0
+Short Ribs: 7.5
+Pork Belly: 5.5
+Pork Shoulder: 5.0
+Pork Tenderloin: 6.0
+Pork Loin: 5.5
+Pork Fillet: 6.5
+Pork Rib Rack: 7.0
+Pork Hock: 3.5
 Chicken Breast: 5.5
-Minced Beef: 4.0
-Pork Chops: 3.5
-Lamb Leg: 9.0
-Bacon: 3.0
 Chicken Thighs: 4.5
-Beef Steak: 7.0
+Chicken Wings: 4.0
+Chicken Drumsticks: 3.0
+Whole Chicken: 6.5
+Chicken Legs: 4.0
+Lamb Leg: 9.0
+Lamb Shoulder: 8.5
+Lamb Chops: 9.5
+Lamb Shank: 7.5
+Lamb Ribs: 8.0
+Lamb Neck: 6.0
+Goat Meat: 7.0
+Venison: 8.0
+Rabbit: 6.5
+Quail: 7.5
+Kangaroo Meat: 10.0
+Pigeon: 7.0
 Sausages: 3.2
-Turkey: 6.5
+Bacon: 3.0
+Hot Dogs: 2.5
+Chorizo: 3.5
+Haggis: 4.5
+Liver (Beef or Chicken): 2.0
+Corned Beef: 3.8
+Mutton: 8.0
 Duck Breast: 8.5
