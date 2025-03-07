@@ -165,6 +165,47 @@ Manicotti: 1.5
 Ditalini: 1.2
 Gemelli: 1.3
 Conchiglie: 1.4
+Salmon Fillet: 7.5
+Cod Fillet: 6.0
+Haddock: 5.5
+Mackerel: 3.0
+Sardines: 2.5
+Tuna Steak: 8.0
+Trout: 5.5
+Plaice: 4.0
+Pollock: 4.5
+Sea Bass: 7.5
+Sole: 9.0
+Herring: 3.0
+Whiting: 4.0
+Rainbow Trout: 6.0
+Ling: 5.5
+Skate Wing: 6.5
+Prawns: 6.0
+Lobster: 18.0
+Crab: 8.0
+Scallops: 10.0
+Octopus: 7.5
+Squid: 5.0
+Halibut: 12.0
+Red Snapper: 10.0
+Swordfish: 12.0
+Tilapia: 5.0
+Carp: 4.5
+Bream: 6.5
+Turbot: 15.0
+Flounder: 4.5
+Eel: 9.0
+Kingfish: 11.0
+Anchovies: 3.0
+Cuttlefish: 5.5
+Clams: 6.0
+Mussels: 4.0
+Oysters: 1.5
+Arctic Char: 8.0
+Chilean Sea Bass: 14.0
+Pike: 4.5
+Catfish: 5.5
 Sirloin Steak: 8.0
 T-bone Steak: 10.0
 Ribeye Steak: 9.5

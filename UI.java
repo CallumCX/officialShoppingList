@@ -332,6 +332,12 @@ public class UI {
                 case ("Conchiglie"):
                     foodArea.append(stringDoubleEntry.getKey() + "\n");
                     foodArea.append("\n");
+                    foodArea.append("FISH: \n");
+                    foodArea.repaint();
+                    break;
+                case ("Catfish"):
+                    foodArea.append(stringDoubleEntry.getKey() + "\n");
+                    foodArea.append("\n");
                     foodArea.append("MEAT & POULTRY: \n");
                     foodArea.repaint();
                     break;
