@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
@@ -65,9 +64,4 @@ public class shopList {
 
         reader.close();
     }
-
-    public static void exit() {
-        System.exit(0);
-    }
-
 }
