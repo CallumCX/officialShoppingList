@@ -240,6 +240,10 @@ public class UI {
                 protein += 1;
                 proteinPrice += foodList.get(string);
             }
+            else if (statsList.indexOf(string) <= statsList.indexOf("Tofu") && statsList.indexOf(string) > statsList.indexOf("Duck Breast")) {
+                dairy += 1;
+                dairyPrice += foodList.get(string);
+            }
         }
         if (!currentList.isEmpty()) {
             statsView.append(String.format("Fruit & veg percentage: %.2f",(fruitVeg / currentList.size()) * 100) + "%\n");
@@ -339,6 +343,12 @@ public class UI {
                     foodArea.append(stringDoubleEntry.getKey() + "\n");
                     foodArea.append("\n");
                     foodArea.append("MEAT & POULTRY: \n");
+                    foodArea.repaint();
+                    break;
+                case ("Duck Breast"):
+                    foodArea.append(stringDoubleEntry.getKey() + "\n");
+                    foodArea.append("\n");
+                    foodArea.append("DIARY: \n");
                     foodArea.repaint();
                     break;
                 default:
@@ -654,6 +664,10 @@ public class UI {
             else if (statsList.indexOf(string) <= statsList.indexOf("Duck Breast") && statsList.indexOf(string) > statsList.indexOf("Conchiglie")) {
                 protein += 1;
                 proteinPrice += foodList.get(string);
+            }
+            else if (statsList.indexOf(string) <= statsList.indexOf("Tofu") && statsList.indexOf(string) > statsList.indexOf("Duck Breast")) {
+                dairy += 1;
+                dairyPrice += foodList.get(string);
             }
         }
 

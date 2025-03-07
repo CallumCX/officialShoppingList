@@ -252,3 +252,76 @@ Liver (Beef or Chicken): 2.0
 Corned Beef: 3.8
 Mutton: 8.0
 Duck Breast: 8.5
+Whole Milk: 1.0
+Semi-Skimmed Milk: 0.9
+Skimmed Milk: 0.8
+Goat Milk: 1.8
+Almond Milk: 1.5
+Oat Milk: 1.6
+Soy Milk: 1.4
+Rice Milk: 1.5
+Buttermilk: 1.2
+Evaporated Milk: 1.0
+Condensed Milk: 1.2
+Cheddar Cheese: 2.5
+Mozzarella: 1.5
+Brie: 2.8
+Camembert: 3.0
+Gouda: 2.6
+Parmesan: 3.5
+Cream Cheese: 1.8
+Cottage Cheese: 1.4
+Ricotta: 2.0
+Feta: 2.5
+Mascarpone: 2.2
+Goat’s Cheese: 3.5
+Halloumi: 3.2
+Lancashire Cheese: 2.8
+Red Leicester Cheese: 2.6
+Double Gloucester Cheese: 2.7
+Wensleydale Cheese: 2.9
+Stilton: 4.0
+Boursin: 3.2
+Philadelphia Cream Cheese: 1.8
+Grana Padano: 3.5
+Blue Cheese: 3.5
+Vegan Cheese: 2.8
+Processed Cheese: 2.0
+Cheese Spread: 2.2
+Cheese Slices: 2.5
+Ricotta Cheese: 2.0
+Goat Cheese (Soft): 3.0
+Double Cream: 2.0
+Single Cream: 1.5
+Clotted Cream: 2.8
+Sour Cream: 1.5
+Heavy Cream: 2.5
+Whipping Cream: 2.0
+Mascarpone Cream: 2.5
+Clotted Cream Large: 4.0
+Yogurt (Plain): 1.0
+Greek Yogurt: 1.5
+Flavored Yogurt: 1.5
+Skyr Yogurt: 2.0
+Rice Pudding Dairy: 1.0
+Kefir: 1.8
+Frozen Yogurt: 3.0
+Butter: 2.0
+Margarine: 1.2
+Flavored Butter: 3.0
+Plant-based Butter: 2.5
+Milk Powder: 2.0
+Powdered Milk: 2.0
+Ice Cream: 3.0
+Dairy Milk Chocolate: 1.5
+Vegan Butter: 2.8
+Vegan Cream: 2.5
+Dulce de Leche: 2.8
+Lactose-Free Milk: 1.2
+Lactose-Free Yogurt: 2.0
+Low Fat Cottage Cheese: 1.6
+Yogurt Drink: 1.5
+Milkshakes: 2.0
+Clotted Cream: 2.5
+Yogurt Tubes: 1.8
+Tofu: 2.5
