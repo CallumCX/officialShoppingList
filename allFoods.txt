@@ -28,7 +28,7 @@ Jackfruit: 3.6
 Lychee: 3.0
 Starfruit: 2.5
 Mulberry: 3.8
-Chilean strawberry: 3.4
+Chilean Strawberry: 3.4
 Pomelo: 2.9
 Persimmon: 3.0
 Raisin: 2.8
@@ -42,24 +42,136 @@ Lettuce: 1.0
 Broccoli: 1.8
 Cauliflower: 2.0
 Pepper: 1.5
+Spinach: 0.9
+Kale: 1.4
+Sweet Potato: 1.8
+Peas: 1.0
+Asparagus: 2.5
+Mushrooms: 1.2
+Pumpkin: 2.2
+Green Beans: 1.3
+Radish: 0.7
+Leek: 1.6
+Beetroot: 1.7
+Celery: 1.1
+Artichoke: 2.4
+Parsnip: 1.6
+Chard: 1.0
+Fennel: 1.3
+Shallots: 1.0
+Brussels Sprouts: 2.1
+Squash: 2.3
+Sweetcorn: 1.7
+Endive: 1.2
+Turnip: 1.3
+Rutabaga: 1.5
+Okra: 1.6
+Garlic: 1.0
+Chayote: 1.4
+Mustard Greens: 1.0
+Collard Greens: 1.2
+Watercress: 1.1
+Daikon Radish: 1.0
+Jicama: 1.2
+Kohlrabi: 1.4
+Taro: 1.7
+Celeriac: 1.5
+Sunchoke: 2.0
+Bamboo Shoots: 1.3
+Mache: 1.0
+Seaweed: 1.1
+Chilli Pepper: 1.4
+Eggplant: 1.6
+Sweet Peas: 1.0
+Celery Root: 1.5
+Leeks: 1.6
 Courgette: 1.2
-Spaghetti:1.0
-Penne:1.2
-Fusilli:1.1
-Macaroni:1.0
-Tagliatelle:1.5
-Lasagne Sheets:2.0
-Rigatoni:1.3
-Orzo:1.4
-Farfalle:1.2
-Conchiglie:1.4
-Chicken Breast:5.5
-Minced Beef:4.0
-Pork Chops:3.5
-Lamb Leg:9.0
-Bacon:3.0
-Chicken Thighs:4.5
-Beef Steak:7.0
-Sausages:3.2
-Turkey:6.5
-Duck Breast:8.5
+White Bread: 1.0
+Wholemeal Bread: 1.2
+Brown Bread: 1.1
+Sourdough: 2.0
+Rye Bread: 1.5
+Multigrain Bread: 1.5
+Ciabatta: 2.0
+Baguette: 1.3
+Pita Bread: 1.0
+Naan Bread: 1.2
+Focaccia: 2.5
+Bagels: 1.8
+Crusty Bread: 1.5
+Seeded Bread: 1.6
+Brioche: 2.2
+Gluten-Free Bread: 2.5
+Chapati: 1.0
+Tiger Bread: 1.7
+Soft White Rolls: 1.2
+Wholemeal Rolls: 1.3
+Croissants: 1.5
+Lavash Bread: 1.6
+Brioche Buns: 1.8
+Pumpernickel: 2.0
+Tortilla: 1.3
+Malthouse Bread: 1.7
+Pugliese: 2.0
+Pane Carasau: 2.5
+Stottie Cake: 2.5
+Soda Bread: 2.0
+Milk Bread: 1.4
+Flatbread: 1.3
+Paratha: 1.5
+Matzah Bread: 2.0
+Pita Pocket: 1.0
+Pão de Queijo: 2.2
+Fougasse: 2.5
+Bagel Bites: 1.3
+Rustic Loaf: 2.0
+Bloomer: 1.5
+Cottage Loaf: 1.8
+French Stick: 1.2
+Cornbread: 2.3
+Pane Toscano: 2.2
+Pain de Campagne: 2.4
+Miche: 2.8
+Pain d'Épi: 2.5
+Challah: 2.0
+Zopf: 2.4
+Fried Bread: 1.8
+Hot Dog Buns: 1.4
+Hamburger Buns: 1.4
+Cinnamon Swirl Bread: 2.0
+Sweet Potato Bread: 2.2
+Garlic Bread: 1.6
+Scone (Sweet): 1.2
+Scone (Savoury): 1.3
+Teacake: 1.0
+Spaghetti: 1.0
+Penne: 1.2
+Fusilli: 1.1
+Macaroni: 1.0
+Tagliatelle: 1.5
+Lasagne Sheets: 2.0
+Rigatoni: 1.3
+Orzo: 1.4
+Farfalle: 1.2
+Cannelloni: 1.6
+Cavatappi: 1.3
+Orecchiette: 1.4
+Pappardelle: 1.7
+Strozzapreti: 1.5
+Trofie: 1.4
+Mafaldine: 1.6
+Anelli: 1.0
+Manicotti: 1.5
+Ditalini: 1.2
+Gemelli: 1.3
+Conchiglie: 1.4
+Chicken Breast: 5.5
+Minced Beef: 4.0
+Pork Chops: 3.5
+Lamb Leg: 9.0
+Bacon: 3.0
+Chicken Thighs: 4.5
+Beef Steak: 7.0
+Sausages: 3.2
+Turkey: 6.5
+Duck Breast: 8.5

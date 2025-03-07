@@ -320,6 +320,12 @@ public class UI {
                 case ("Courgette"):
                     foodArea.append(stringDoubleEntry.getKey() + "\n");
                     foodArea.append("\n");
+                    foodArea.append("BREAD: \n");
+                    foodArea.repaint();
+                    break;
+                case ("Teacake"):
+                    foodArea.append(stringDoubleEntry.getKey() + "\n");
+                    foodArea.append("\n");
                     foodArea.append("PASTA: \n");
                     foodArea.repaint();
                     break;
