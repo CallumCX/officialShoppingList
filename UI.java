@@ -215,10 +215,12 @@ public class UI {
         double fruitVeg = 0;
         double dairy = 0;
         double protein = 0;
+        double hygiene = 0;
         double carbPrice = 0;
         double fruitVegPrice = 0;
         double dairyPrice = 0;
         double proteinPrice = 0;
+        double hygienePrice = 0;
 
         for (Map.Entry<String,Double> stringDoubleEntry:foodList.entrySet()) {
             statsList.add(stringDoubleEntry.getKey());
@@ -244,17 +246,24 @@ public class UI {
                 dairy += 1;
                 dairyPrice += foodList.get(string);
             }
+            else if (statsList.indexOf(string) <= statsList.indexOf("Sunscreen") && statsList.indexOf(string) > statsList.indexOf("Tofu")) {
+                hygiene += 1;
+                hygienePrice += foodList.get(string);
+            }
         }
+
         if (!currentList.isEmpty()) {
             statsView.append(String.format("Fruit & veg percentage: %.2f",(fruitVeg / currentList.size()) * 100) + "%\n");
             statsView.append(String.format("Carbohydrates percentage: %.2f",(carbohydrates / currentList.size()) * 100) + "%\n");
             statsView.append(String.format("Protein percentage: %.2f",(protein / currentList.size()) * 100) + "%\n");
             statsView.append(String.format("Dairy percentage: %.2f",(dairy / currentList.size()) * 100) + "%\n");
+            statsView.append(String.format("Hygeine products percentage: %.2f",(hygiene / currentList.size()) * 100) + "%\n");
             statsView.append("\n");
             statsView.append(String.format("Total amount spent on fruit & veg: £%.2f \n",fruitVegPrice));
             statsView.append(String.format("Total amount spent on carbohydrates: £%.2f \n",carbPrice));
             statsView.append(String.format("Total amount spent on protein: £%.2f \n",proteinPrice));
             statsView.append(String.format("Total amount spent on dairy: £%.2f \n",dairyPrice));
+            statsView.append(String.format("Total amount spent on hygiene: £%.2f \n",hygienePrice));
             statsView.repaint();
             statsView.revalidate();
         }
@@ -263,11 +272,13 @@ public class UI {
             statsView.append("Carbohydrates percentage: 0.0%\n");
             statsView.append("Protein percentage: 0.0%\n");
             statsView.append("Dairy percentage: 0.0%\n");
+            statsView.append("Hygiene percentage: 0.0%\n");
             statsView.append("\n");
             statsView.append("Total amount spent on fruit & veg: £0.00 \n");
             statsView.append("Total amount spent on carbohydrates: £0.00 \n");
             statsView.append("Total amount spent on protein: £0.00 \n");
             statsView.append("Total amount spent on dairy: £0.00 \n");
+            statsView.append("Total amount spent on hygiene: £0.00 \n");
             statsView.repaint();
             statsView.revalidate();
         }
@@ -349,6 +360,12 @@ public class UI {
                     foodArea.append(stringDoubleEntry.getKey() + "\n");
                     foodArea.append("\n");
                     foodArea.append("DIARY: \n");
+                    foodArea.repaint();
+                    break;
+                case ("Tofu"):
+                    foodArea.append(stringDoubleEntry.getKey() + "\n");
+                    foodArea.append("\n");
+                    foodArea.append("HYGIENE: \n");
                     foodArea.repaint();
                     break;
                 default:
@@ -640,10 +657,12 @@ public class UI {
         double fruitVeg = 0;
         double dairy = 0;
         double protein = 0;
+        double hygiene = 0;
         double carbPrice = 0;
         double fruitVegPrice = 0;
         double dairyPrice = 0;
         double proteinPrice = 0;
+        double hygienePrice = 0;
 
         for (Map.Entry<String,Double> stringDoubleEntry:foodList.entrySet()) {
             statsList.add(stringDoubleEntry.getKey());
@@ -669,6 +688,10 @@ public class UI {
                 dairy += 1;
                 dairyPrice += foodList.get(string);
             }
+            else if (statsList.indexOf(string) <= statsList.indexOf("Sunscreen") && statsList.indexOf(string) > statsList.indexOf("Tofu")) {
+                hygiene += 1;
+                hygienePrice += foodList.get(string);
+            }
         }
 
         if (!currentList.isEmpty()) {
@@ -676,11 +699,13 @@ public class UI {
             statsView.append(String.format("Carbohydrates percentage: %.2f",(carbohydrates / currentList.size()) * 100) + "%\n");
             statsView.append(String.format("Protein percentage: %.2f",(protein / currentList.size()) * 100) + "%\n");
             statsView.append(String.format("Dairy percentage: %.2f",(dairy / currentList.size()) * 100) + "%\n");
+            statsView.append(String.format("Hygeine products percentage: %.2f",(hygiene / currentList.size()) * 100) + "%\n");
             statsView.append("\n");
             statsView.append(String.format("Total amount spent on fruit & veg: £%.2f \n",fruitVegPrice));
             statsView.append(String.format("Total amount spent on carbohydrates: £%.2f \n",carbPrice));
             statsView.append(String.format("Total amount spent on protein: £%.2f \n",proteinPrice));
             statsView.append(String.format("Total amount spent on dairy: £%.2f \n",dairyPrice));
+            statsView.append(String.format("Total amount spent on hygiene: £%.2f \n",hygienePrice));
             statsView.repaint();
             statsView.revalidate();
         }
@@ -689,11 +714,13 @@ public class UI {
             statsView.append("Carbohydrates percentage: 0.0%\n");
             statsView.append("Protein percentage: 0.0%\n");
             statsView.append("Dairy percentage: 0.0%\n");
+            statsView.append("Hygiene percentage: 0.0%\n");
             statsView.append("\n");
             statsView.append("Total amount spent on fruit & veg: £0.00 \n");
             statsView.append("Total amount spent on carbohydrates: £0.00 \n");
             statsView.append("Total amount spent on protein: £0.00 \n");
             statsView.append("Total amount spent on dairy: £0.00 \n");
+            statsView.append("Total amount spent on hygiene: £0.00 \n");
             statsView.repaint();
             statsView.revalidate();
         }
