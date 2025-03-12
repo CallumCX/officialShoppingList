@@ -325,3 +325,162 @@ Milkshakes: 2.0
 Clotted Cream: 2.5
 Yogurt Tubes: 1.8
 Tofu: 2.5
+All-Purpose Cleaner: 2.00
+Surface Cleaner: 2.50
+Disinfectant: 2.50
+Glass Cleaner: 1.75
+Floor Cleaner: 2.75
+Toilet Cleaner: 1.50
+Bleach: 1.00
+Laundry Detergent: 5.00
+Fabric Softener: 3.00
+Dishwashing Liquid: 1.50
+Oven Cleaner: 3.00
+Bathroom Cleaner: 2.00
+Furniture Polish: 2.50
+Window Cleaning Wipes: 2.00
+Dishwasher Tablets: 5.00
+Surface Wipes: 1.50
+Carpet Cleaner: 3.00
+Laundry Stain Remover: 2.50
+Air Freshener: 2.00
+Mop Refill: 3.00
+Toilet Paper: 4.00
+Shampoo: 3.00
+Conditioner: 3.00
+Shower Gel: 2.00
+Body Lotion: 3.00
+Toothpaste: 1.50
+Toothbrush: 2.00
+Deodorant: 2.00
+Razors: 7.00
+Feminine Hygiene Products: 2.50
+Face Wash: 3.00
+Hand Wash: 2.00
+Hair Styling Gel: 3.00
+Moisturiser: 4.00
+Cotton Pads: 1.50
+Shaving Foam: 2.00
+Lip Balm: 1.00
+Body Scrub: 3.50
+Nail Polish Remover: 1.50
+Sunscreen: 4.00
+Lager: 1.50
+Ale: 1.80
+Gin: 18.00
+Whiskey: 20.00
+Mixed Cocktail: 4.00
+Tequila: 15.00
+Vodka: 12.00
+Cider: 1.50
+Soft Drink: 1.00
+Lemonade: 1.00
+Fruit Juice: 1.50
+Energy Drink: 1.20
+Fruit Squash: 1.30
+Sparkling Water: 1.20
+Still Water: 0.75
+Iced Tea: 1.50
+Juice Drink: 1.50
+Tomato Ketchup: 1.00
+Brown Sauce: 1.00
+Mayonnaise: 1.50
+Salad Cream: 1.00
+Mustard: 1.20
+Barbecue Sauce: 1.50
+Hot Sauce: 1.50
+Pesto: 2.00
+Sweet Chili Sauce: 1.50
+Soy Sauce: 1.20
+Worcester Sauce: 1.00
+Vinegar: 0.75
+Olive Oil: 2.50
+Salad Dressing: 1.50
+Caesar Dressing: 1.50
+Gravy Granules: 1.00
+Stuffing Mix: 1.00
+Cranberry Sauce: 1.50
+Honey Mustard Dressing: 1.50
+Garlic Butter: 2.00
+Black Pepper: 1.00
+Salt: 0.50
+Paprika: 1.20
+Cumin: 1.50
+Chili Powder: 1.20
+Curry Powder: 1.50
+Turmeric: 1.00
+Garlic Powder: 1.00
+Onion Powder: 1.00
+Oregano: 1.20
+Basil: 1.20
+Thyme: 1.20
+Rosemary: 1.20
+Cinnamon: 1.00
+Ginger: 1.00
+Fajita Seasoning: 1.50
+Coriander: 1.20
+Milk Chocolate Bar: 1.00
+Dark Chocolate Bar: 1.20
+White Chocolate Bar: 1.20
+Mini Eggs: 2.00
+Maltesers: 1.50
+M&Ms: 1.50
+KitKat: 1.00
+Snickers Bar: 1.00
+Mars Bar: 1.00
+Dairy Milk Bar: 1.00
+Galaxy Bar: 1.50
+Lindt Chocolate: 2.50
+Cadbury Flake: 1.00
+Toblerone: 2.00
+Crunchie Bar: 1.00
+Boost Bar: 1.00
+Bounty Bar: 1.00
+Caramel Chocolate Bar: 1.50
+KitKat Chunky: 1.50
+Chocolate Truffles: 2.50
+Hot Chocolate Powder: 2.00
+Kinder Bueno: 1.50
+Ferrero Rocher: 2.50
+Lindt Lindor Truffles: 3.50
+Terry’s Chocolate Orange: 2.00
+Reece’s Peanut Butter Cups: 1.50
+Toblerone Miniatures: 2.50
+Chocolate Coated Raisins: 1.50
+Choc Mousse Pots: 1.50
+Chocolate Covered Almonds: 2.00
+Dark Chocolate with Sea Salt: 1.80
+Chocolate-Covered Biscuit: 1.00
+Chocolate Buttons: 1.50
+Smarties: 1.50
+Milky Bar: 1.00
+Choc Chip Cookies: 1.50
+Chocolate Covered Pretzels: 2.00
+Wholenut Chocolate Bar: 1.50
+Chocolate Milk Drink: 1.20
+Chocolate Bar with Popcorn: 1.50
+Chocolate Nibbles: 1.50
+Chocolate Dipped Wafers: 1.00
+Chocolate Cake Slice: 2.00
+Victoria Sponge Cake Slice: 1.80
+Carrot Cake Slice: 1.80
+Lemon Drizzle Cake Slice: 1.80
+Cupcakes: 1.50
+Donuts: 1.00
+Iced Donuts: 1.20
+Jam Donuts: 1.20
+Chocolate Chip Cookies: 1.50
+Shortbread Biscuits: 1.00
+Oatmeal Cookies: 1.20
+Brownies: 1.80
+Rice Krispies Treats: 1.50
+Muffins: 1.50
+Tarts: 2.00
+Danish Pastries: 1.50
+Eclairs: 1.50
+Biscuit Selection Box: 2.00
+Cheesecake Slice: 2.50
+Baklava: 2.00
+Chocolate Fudge Cake Slice: 2.00
+Swiss Roll: 1.50
+Churros: 2.00
