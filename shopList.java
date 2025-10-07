@@ -31,7 +31,7 @@ public class shopList {
     }
 
     public static void createDictionary(Map<String,Double> dict) throws FileNotFoundException {
-        File file = new File("C:\\Users\\callu\\IdeaProjects\\officialShoppingList\\allFoods.txt");
+        File file = new File("allFoods.txt");
         Scanner reader = new Scanner(file);
 
         while (reader.hasNextLine()) {

@@ -340,8 +340,6 @@ public class UI {
         priceArea.setVisible(true);
         mainWindow.add(priceArea);
         priceArea.append(String.format("Current price is: £%.2f \n" , shopList.calculatePrice(currentList,foodList)));
-        priceArea.append(String.format("Morrisons discount: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.1));
-        priceArea.append(String.format("Discounted price: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.9));
 
         priceArea.repaint();
 
@@ -685,8 +683,6 @@ public class UI {
         priceArea.setText("");
 
         priceArea.append(String.format("Current price is: £%.2f \n" , shopList.calculatePrice(currentList,foodList)));
-        priceArea.append(String.format("Morrisons discount: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.1));
-        priceArea.append(String.format("Discounted price: £%.2f \n" , shopList.calculatePrice(currentList,foodList)*0.9));
         priceArea.repaint();
     }
 
